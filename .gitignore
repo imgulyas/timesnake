@@ -1,0 +1,5 @@
+.stack-work/
+stack.yaml*
+timesnake.cabal
+dist-newstyle/
+*~
