@@ -1,0 +1,52 @@
+name:                timesnake
+version:             0.1.0.0
+license:             BSD2
+license-file:        LICENSE
+author:              Imre Gulyas
+maintainer:          imgulyas@gmail.com
+build-type:          Simple
+cabal-version:       >=1.10
+
+test-suite test
+  main-is:             Spec.hs
+  type:                exitcode-stdio-1.0
+  build-depends:       base >=4.10
+                     , hspec
+                     , safe
+                     , text
+                     , polysemy
+  hs-source-dirs:      src, test
+  default-language:    Haskell2010
+  ghc-options:         -Weverything
+                       -Wno-missing-exported-signatures
+                       -Wno-implicit-prelude
+                       -Wno-missing-import-lists
+                       -Wno-missed-specialisations
+                       -Wno-all-missed-specialisations
+                       -Wno-unsafe
+                       -Wno-safe
+                       -Wno-missing-local-signatures
+                       -Wno-monomorphism-restriction
+
+executable timesnake-server
+  main-is:             ServerMain.hs
+  other-modules:       Game.World
+                     , Game.Snake
+                     , Game.Position
+  build-depends:       base >=4.10
+                     , polysemy
+                     , text
+                     , containers
+                     , optparse-generic
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Weverything
+                       -Wno-missing-exported-signatures
+                       -Wno-implicit-prelude
+                       -Wno-missing-import-lists
+                       -Wno-missed-specialisations
+                       -Wno-all-missed-specialisations
+                       -Wno-unsafe
+                       -Wno-safe
+                       -Wno-missing-local-signatures
+                       -Wno-monomorphism-restriction
